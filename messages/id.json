@@ -1,0 +1,13 @@
+{
+  "common": {
+    "loading": "Memuat…"
+  },
+  "meta": {
+    "description": "Rencanakan pernikahan dari lamaran sampai laporan akhir: checklist, anggaran, tamu, undangan, dan check-in hari H."
+  },
+  "home": {
+    "title": "{brand}",
+    "lead": "Satu tempat untuk merencanakan pernikahan, dari lamaran sampai laporan akhir.",
+    "status": "Sedang dibangun."
+  }
+}
