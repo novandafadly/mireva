@@ -10,6 +10,7 @@ export default async function WeddingLayout({
   const links = [
     { href: `${base}/dasbor`, label: t("dashboard") },
     { href: `${base}/checklist`, label: t("checklist") },
+    { href: `${base}/rundown`, label: t("rundown") },
     { href: `${base}/pengaturan/anggota`, label: t("members") },
     { href: "/app", label: t("weddings") },
   ];

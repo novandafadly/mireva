@@ -205,7 +205,8 @@
     "members": "Anggota",
     "weddings": "Semua wedding",
     "label": "Menu wedding",
-    "checklist": "Checklist"
+    "checklist": "Checklist",
+    "rundown": "Rundown"
   },
   "dashboard": {
     "title": "Dasbor",
@@ -286,6 +287,39 @@
     "errors": {
       "invalidInput": "Periksa lagi judul, tahap, dan tenggat.",
       "forbidden": "Anda tidak punya izin untuk mengubah tugas ini.",
+      "generic": "Terjadi kesalahan. Coba lagi."
+    }
+  },
+  "rundown": {
+    "title": "Rundown",
+    "lead": "Susunan acara hari H per sesi. Jam ditulis dalam {zone}.",
+    "noAccess": "Anda tidak punya akses ke rundown wedding ini.",
+    "noSession": "Tanpa sesi",
+    "emptySession": "Belum ada acara di sesi ini.",
+    "empty": "Belum ada acara.",
+    "noTime": "Jam belum diisi",
+    "duration": "{minutes} menit",
+    "pic": "PIC: {name}",
+    "location": "Lokasi: {place}",
+    "fields": {
+      "title": "Nama acara",
+      "session": "Sesi",
+      "noSession": "Tanpa sesi",
+      "startsAt": "Tanggal dan jam",
+      "durationMin": "Durasi (menit)",
+      "picText": "PIC",
+      "location": "Lokasi",
+      "notes": "Catatan"
+    },
+    "add": "Tambah acara",
+    "addSubmit": "Tambah",
+    "edit": "Ubah",
+    "save": "Simpan",
+    "delete": "Hapus",
+    "deleteConfirm": "Hapus acara \"{title}\"?",
+    "errors": {
+      "invalidInput": "Periksa lagi nama acara, jam, dan durasi.",
+      "forbidden": "Anda tidak punya izin untuk mengubah rundown.",
       "generic": "Terjadi kesalahan. Coba lagi."
     }
   }
