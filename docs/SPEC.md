@@ -1,6 +1,6 @@
 # SPEC
 
-Status: **disetujui** (16 November 2026) dengan usulan di bagian 10 sebagai keputusan. Fase 1 sedang dikerjakan: modul 1.0, 1.1, dan 1.2 selesai.
+Status: **disetujui** (16 November 2026) dengan usulan di bagian 10 sebagai keputusan. Fase 1 sedang dikerjakan: modul 1.0 sampai 1.3 selesai, kecuali lampiran (menunggu proyek Supabase untuk Storage).
 Sumber kebutuhan: [BRIEF.md](./BRIEF.md). Keputusan arsitektur: [DECISIONS.md](./DECISIONS.md).
 
 Nama produk belum final. Dokumen ini menyebutnya "produk". Di kode, nama, tagline, dan domain hanya ada di `src/config/brand.ts`.
