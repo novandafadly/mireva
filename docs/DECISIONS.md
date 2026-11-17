@@ -1,6 +1,6 @@
 # DECISIONS
 
-Catatan keputusan arsitektur. Status semua butir: **diusulkan**, menunggu persetujuan bersama [SPEC.md](./SPEC.md). Keputusan baru ditambahkan di bawah dengan nomor berikutnya. Keputusan yang diganti tidak dihapus, hanya ditandai "diganti oleh D-xxx".
+Catatan keputusan arsitektur. Status: **disetujui** bersama [SPEC.md](./SPEC.md) pada 16 November 2026. Keputusan baru ditambahkan di bawah dengan nomor berikutnya. Keputusan yang diganti tidak dihapus, hanya ditandai "diganti oleh D-xxx".
 
 Format: konteks, keputusan, konsekuensi.
 
@@ -153,3 +153,21 @@ Format: konteks, keputusan, konsekuensi.
 ## D-025 Perkakas
 
 **Keputusan.** pnpm, Node LTS, ESLint + Prettier, Vitest, Playwright, Supabase CLI. Versi Next.js stabil terbaru saat scaffold, dikunci di lockfile.
+
+## D-026 Hak tabel dan fungsi diberikan satu per satu
+
+**Konteks.** Supabase memberi `anon` dan `authenticated` hak penuh atas setiap tabel baru di `public`, dan Postgres memberi `PUBLIC` hak `execute` atas setiap fungsi baru. D-005 menuntut `anon` tanpa hak apa pun.
+**Keputusan.** Migrasi pertama mencabut hak bawaan untuk `anon` dan `authenticated`. Setiap migrasi yang menambah tabel atau fungsi mencabut hak dari `public`, `anon`, `authenticated`, lalu memberi hak yang dibutuhkan secara eksplisit ke `authenticated`. Tes pgTAP tiap tabel memeriksa bahwa `anon` ditolak.
+**Konsekuensi.** Lupa memberi hak membuat fitur gagal dengan jelas (42501), bukan terbuka diam-diam. Tabel tanpa hak `insert` tidak bisa diisi klien walau ada kebijakan RLS yang keliru.
+
+## D-027 Anggota hanya masuk lewat fungsi
+
+**Konteks.** SPEC mengizinkan owner menulis `wedding_members`. Insert langsung berarti owner bisa menambahkan `user_id` siapa pun tanpa persetujuan orang itu.
+**Keputusan.** Klien tidak punya hak `insert` pada `weddings` dan `wedding_members`. Baris dibuat oleh `create_wedding()` dan `accept_wedding_invite()`. Yang kedua mewajibkan email akun sama dengan email undangan. Owner tetap bisa mengubah izin dan mengeluarkan anggota.
+**Konsekuensi.** Tidak ada anggota tanpa undangan yang diterima sendiri. Menerima undangan dilakukan dengan tombol (POST), bukan saat link dibuka, supaya pemindai link di email tidak memicunya.
+
+## D-028 Uji database lokal tanpa Docker
+
+**Konteks.** Lingkungan pengembangan cloud tidak bisa mengunduh image Supabase.
+**Keputusan.** Sumber kebenaran tetap `supabase test db` di CI. Untuk putaran cepat, migrasi dan pgTAP juga dijalankan di Postgres polos dengan tiruan kecil (peran `anon`, `authenticated`, `service_role`, skema `auth`, `auth.uid()`). Migrasi hanya memakai fitur yang ada di keduanya.
+**Konsekuensi.** Perilaku khusus Supabase (Auth, Storage, Realtime) tidak teruji secara lokal di lingkungan itu, hanya di CI atau proyek hosted.

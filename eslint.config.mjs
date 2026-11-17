@@ -15,21 +15,46 @@ const brandPattern = `/${brandName.replace(/[.*+?^${}()|[\]\\/]/g, "\\$&")}/i`;
 const brandMessage =
   "Jangan menulis nama produk sebagai literal. Impor `brand` dari src/config/brand.ts.";
 
+const brandRules = [
+  { selector: `Literal[value=${brandPattern}]`, message: brandMessage },
+  { selector: `TemplateElement[value.raw=${brandPattern}]`, message: brandMessage },
+  { selector: `JSXText[value=${brandPattern}]`, message: brandMessage },
+];
+
+// D-012: paket dan limit wedding hanya dibaca lewat src/lib/entitlements.ts.
+const entitlementRules = [
+  {
+    selector: "MemberExpression[property.name=/^(plan|limits)$/]",
+    message:
+      "Jangan membaca plan atau limits secara langsung. Pakai can(), limit(), atau assertCan() dari src/lib/entitlements.ts.",
+  },
+];
+
+const sourceFiles = ["**/*.{ts,tsx,mts,js,jsx,mjs}"];
+
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   prettier,
   {
-    files: ["**/*.{ts,tsx,mts,js,jsx,mjs}"],
-    ignores: ["src/config/brand.ts"],
+    files: sourceFiles,
     rules: {
-      "no-restricted-syntax": [
-        "error",
-        { selector: `Literal[value=${brandPattern}]`, message: brandMessage },
-        { selector: `TemplateElement[value.raw=${brandPattern}]`, message: brandMessage },
-        { selector: `JSXText[value=${brandPattern}]`, message: brandMessage },
-      ],
+      // Parameter yang wajib ada di tanda tangan (mis. state pada useActionState).
+      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
     },
+  },
+  {
+    files: sourceFiles,
+    ignores: ["src/config/brand.ts", "src/lib/entitlements.ts"],
+    rules: { "no-restricted-syntax": ["error", ...brandRules, ...entitlementRules] },
+  },
+  {
+    files: ["src/config/brand.ts"],
+    rules: { "no-restricted-syntax": ["error", ...entitlementRules] },
+  },
+  {
+    files: ["src/lib/entitlements.ts"],
+    rules: { "no-restricted-syntax": ["error", ...brandRules] },
   },
   // Override default ignores of eslint-config-next.
   globalIgnores([

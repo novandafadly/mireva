@@ -40,6 +40,16 @@ function parseCalendarDate(date: string): number {
   throw new RangeError(`Tanggal tidak sah: ${date}`);
 }
 
+/** Benar bila string berbentuk "YYYY-MM-DD" dan tanggalnya ada di kalender. */
+export function isCalendarDate(value: string): boolean {
+  try {
+    parseCalendarDate(value);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 /** Tanggal kalender di zona wedding untuk suatu saat. */
 export function dateInZone(instant: Date, timezone: WeddingTimezone): string {
   return formatCalendarDate(instant.getTime() + ZONES[timezone].offsetHours * MS_PER_HOUR);

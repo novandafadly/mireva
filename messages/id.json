@@ -1,6 +1,10 @@
 {
   "common": {
-    "loading": "Memuat…"
+    "loading": "Memuat…",
+    "back": "Kembali",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "genericError": "Terjadi kesalahan. Coba lagi."
   },
   "meta": {
     "description": "Rencanakan pernikahan dari lamaran sampai laporan akhir: checklist, anggaran, tamu, undangan, dan check-in hari H."
@@ -9,5 +13,228 @@
     "title": "{brand}",
     "lead": "Satu tempat untuk merencanakan pernikahan, dari lamaran sampai laporan akhir.",
     "status": "Sedang dibangun."
+  },
+  "auth": {
+    "signIn": {
+      "title": "Masuk",
+      "submit": "Masuk",
+      "noAccount": "Belum punya akun?",
+      "toSignUp": "Daftar",
+      "forgot": "Lupa sandi?"
+    },
+    "signUp": {
+      "title": "Daftar",
+      "submit": "Buat akun",
+      "hasAccount": "Sudah punya akun?",
+      "toSignIn": "Masuk",
+      "passwordHint": "Minimal 8 karakter."
+    },
+    "forgot": {
+      "title": "Lupa sandi",
+      "lead": "Masukkan email akun Anda. Kami kirim link untuk membuat sandi baru.",
+      "submit": "Kirim link",
+      "toSignIn": "Kembali ke halaman masuk"
+    },
+    "reset": {
+      "title": "Buat sandi baru",
+      "submit": "Simpan sandi"
+    },
+    "fields": {
+      "fullName": "Nama lengkap",
+      "email": "Email",
+      "password": "Sandi",
+      "newPassword": "Sandi baru"
+    },
+    "google": "Lanjut dengan Google",
+    "or": "atau",
+    "signOut": "Keluar",
+    "notices": {
+      "checkEmail": "Cek email Anda dan buka link konfirmasi untuk menyelesaikan pendaftaran.",
+      "resetSent": "Jika email itu terdaftar, link untuk membuat sandi baru sudah dikirim."
+    },
+    "errors": {
+      "invalidCredentials": "Email atau sandi salah.",
+      "emailTaken": "Email ini sudah terdaftar. Coba masuk.",
+      "weakPassword": "Sandi terlalu lemah. Pakai minimal 8 karakter.",
+      "emailNotConfirmed": "Email belum dikonfirmasi. Buka link di email pendaftaran Anda.",
+      "rateLimited": "Terlalu banyak percobaan. Tunggu sebentar lalu coba lagi.",
+      "invalidInput": "Periksa lagi isian Anda.",
+      "linkInvalid": "Link tidak berlaku atau sudah kedaluwarsa. Minta link baru.",
+      "generic": "Terjadi kesalahan. Coba lagi."
+    }
+  },
+  "weddings": {
+    "list": {
+      "title": "Wedding Anda",
+      "empty": "Belum ada wedding. Buat yang pertama, atau buka link undangan dari pasangan Anda.",
+      "create": "Buat wedding",
+      "roleOwner": "Owner",
+      "roleCollaborator": "Panitia",
+      "archived": "Diarsipkan",
+      "dateUnset": "Tanggal belum ditentukan"
+    },
+    "create": {
+      "title": "Buat wedding",
+      "lead": "Jawab beberapa pertanyaan. Kami susun checklist, rundown awal, dan alokasi anggaran. Semuanya bisa diubah nanti.",
+      "sections": {
+        "couple": "Mempelai",
+        "date": "Tanggal acara",
+        "place": "Tempat",
+        "ceremony": "Upacara dan adat",
+        "scale": "Tamu dan anggaran"
+      },
+      "partnerA": "Nama mempelai pertama",
+      "partnerB": "Nama mempelai kedua",
+      "dateMode": {
+        "exact": "Sudah pasti",
+        "range": "Masih rentang",
+        "unknown": "Belum tahu"
+      },
+      "dateStart": "Tanggal acara",
+      "dateRangeStart": "Paling cepat",
+      "dateRangeEnd": "Paling lambat",
+      "dateRangeHint": "Tenggat checklist dihitung dari tanggal paling cepat dan ditandai perkiraan.",
+      "dateUnknownHint": "Checklist dibuat tanpa tenggat. Tenggat muncul setelah tanggal diisi.",
+      "city": "Kota",
+      "timezone": "Zona waktu",
+      "ceremony": "Jenis upacara",
+      "ceremonyHint": "Opsional. Hanya untuk memilih template checklist dan berkas. Tidak ditampilkan ke tamu.",
+      "ceremonyOptions": {
+        "none": "Belum ditentukan",
+        "akad": "Akad nikah",
+        "pemberkatan": "Pemberkatan",
+        "lainnya": "Lainnya"
+      },
+      "customs": "Adat",
+      "customsHint": "Pilih paling banyak dua. Template per adat sedang disiapkan; pilihan Anda disimpan.",
+      "customOptions": {
+        "nasional": "Nasional",
+        "jawa": "Jawa",
+        "sunda": "Sunda",
+        "minang": "Minang",
+        "batak": "Batak",
+        "bugis": "Bugis",
+        "betawi": "Betawi",
+        "bali": "Bali"
+      },
+      "guestEstimate": "Perkiraan jumlah tamu",
+      "totalBudget": "Total anggaran (Rp)",
+      "totalBudgetHint": "Contoh: 150.000.000. Boleh dikosongkan.",
+      "submit": "Buat wedding dan susun rencana",
+      "errors": {
+        "invalidInput": "Periksa lagi isian Anda: nama mempelai, tanggal, adat (maksimal dua), jumlah tamu, dan anggaran.",
+        "generic": "Wedding belum bisa dibuat. Coba lagi."
+      }
+    }
+  },
+  "members": {
+    "title": "Anggota",
+    "lead": "Orang yang ikut mengelola wedding ini.",
+    "you": "Anda",
+    "roles": {
+      "owner": "Owner",
+      "collaborator": "Panitia"
+    },
+    "ownerAccess": "Akses penuh ke semua modul.",
+    "modules": {
+      "planning": "Checklist dan rundown",
+      "budget": "Anggaran",
+      "vendors": "Vendor",
+      "guests": "Tamu",
+      "invitation": "Undangan",
+      "event_day": "Hari H"
+    },
+    "levels": {
+      "none": "Tanpa akses",
+      "view": "Lihat",
+      "edit": "Edit"
+    },
+    "savePermissions": "Simpan izin",
+    "permissionsSaved": "Izin disimpan.",
+    "remove": "Keluarkan",
+    "removeConfirm": "Keluarkan {name} dari wedding ini?",
+    "invite": {
+      "title": "Undang anggota",
+      "email": "Email",
+      "role": "Peran",
+      "roleOwnerHint": "Pasangan Anda. Maksimal dua owner.",
+      "roleCollaboratorHint": "Keluarga atau panitia, dengan izin per modul.",
+      "permissions": "Izin per modul",
+      "submit": "Buat undangan",
+      "created": "Undangan dibuat. Link ini hanya ditampilkan sekali:",
+      "emailed": "Link juga sudah dikirim ke {email}.",
+      "notEmailed": "Email belum dikonfigurasi. Salin link ini dan kirim sendiri ke {email}.",
+      "expires": "Berlaku 7 hari. Penerima harus masuk dengan email tersebut."
+    },
+    "pending": {
+      "title": "Undangan menunggu",
+      "empty": "Tidak ada undangan yang menunggu.",
+      "expires": "Berlaku sampai {date}",
+      "expired": "Kedaluwarsa",
+      "revoke": "Cabut"
+    },
+    "errors": {
+      "invalidInput": "Periksa lagi email dan izin yang dipilih.",
+      "alreadyInvited": "Email ini sudah punya undangan aktif. Cabut dulu yang lama.",
+      "limitReached": "Jumlah panitia sudah mencapai batas paket.",
+      "maxOwners": "Wedding ini sudah punya dua owner.",
+      "lastOwner": "Owner terakhir tidak bisa dikeluarkan.",
+      "forbidden": "Anda tidak punya izin untuk tindakan ini.",
+      "generic": "Terjadi kesalahan. Coba lagi."
+    }
+  },
+  "join": {
+    "title": "Undangan bergabung",
+    "lead": "Anda diundang untuk ikut mengelola persiapan sebuah pernikahan.",
+    "signedInAs": "Anda masuk sebagai {email}.",
+    "submit": "Gabung",
+    "switchAccount": "Bukan akun yang benar? Keluar lalu masuk dengan email yang diundang.",
+    "errors": {
+      "invite_not_found": "Undangan tidak ditemukan, sudah dipakai, atau sudah dicabut.",
+      "invite_expired": "Undangan sudah kedaluwarsa. Minta undangan baru.",
+      "invite_email_mismatch": "Undangan ini untuk alamat email lain. Masuk dengan email yang diundang.",
+      "already_member": "Anda sudah menjadi anggota wedding ini.",
+      "wedding_archived": "Wedding ini sudah diarsipkan.",
+      "max_two_owners": "Wedding ini sudah punya dua owner.",
+      "limit_exceeded": "Jumlah panitia sudah mencapai batas paket. Hubungi pengundang.",
+      "generic": "Undangan belum bisa diterima. Coba lagi."
+    }
+  },
+  "nav": {
+    "dashboard": "Dasbor",
+    "members": "Anggota",
+    "weddings": "Semua wedding",
+    "label": "Menu wedding"
+  },
+  "dashboard": {
+    "title": "Dasbor",
+    "countdown": {
+      "label": "Hitung mundur",
+      "days": "{days, plural, =0 {Hari ini} other {# hari lagi}}",
+      "past": "Acara sudah lewat",
+      "unset": "Tanggal belum ditentukan",
+      "estimate": "Perkiraan, dari awal rentang tanggal",
+      "date": "{date}"
+    },
+    "checklist": {
+      "label": "Progres checklist",
+      "value": "{done} dari {total} tugas selesai",
+      "empty": "Belum ada tugas."
+    },
+    "budget": {
+      "label": "Anggaran",
+      "total": "Total anggaran",
+      "allocated": "Sudah dialokasikan",
+      "remaining": "Belum dialokasikan",
+      "over": "Alokasi melebihi total anggaran sebesar {amount}",
+      "unset": "Total anggaran belum diisi."
+    },
+    "focus": {
+      "label": "Fokus minggu ini",
+      "empty": "Tidak ada tugas yang jatuh tempo dalam 7 hari.",
+      "overdue": "Terlambat",
+      "due": "Tenggat {date}"
+    },
+    "archived": "Wedding ini diarsipkan dan hanya bisa dibaca."
   }
 }

@@ -2,6 +2,7 @@ name: CI
 
 on:
   push:
+    branches: [main, claude/product-brief-brand-config-j0gbih]
   pull_request:
 
 concurrency:
