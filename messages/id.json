@@ -206,7 +206,8 @@
     "weddings": "Semua wedding",
     "label": "Menu wedding",
     "checklist": "Checklist",
-    "rundown": "Rundown"
+    "rundown": "Rundown",
+    "budget": "Anggaran"
   },
   "dashboard": {
     "title": "Dasbor",
@@ -227,9 +228,12 @@
       "label": "Anggaran",
       "total": "Total anggaran",
       "allocated": "Sudah dialokasikan",
-      "remaining": "Belum dialokasikan",
+      "remaining": "Sisa anggaran",
       "over": "Alokasi melebihi total anggaran sebesar {amount}",
-      "unset": "Total anggaran belum diisi."
+      "unset": "Total anggaran belum diisi.",
+      "committed": "Terikat",
+      "realized": "Sudah dibayar",
+      "planOver": "Jumlah estimasi melebihi total anggaran sebesar {amount}."
     },
     "focus": {
       "label": "Fokus minggu ini",
@@ -237,7 +241,14 @@
       "overdue": "Terlambat",
       "due": "Tenggat {date}"
     },
-    "archived": "Wedding ini diarsipkan dan hanya bisa dibaca."
+    "archived": "Wedding ini diarsipkan dan hanya bisa dibaca.",
+    "payments": {
+      "label": "Pembayaran terdekat",
+      "empty": "Tidak ada pembayaran terjadwal.",
+      "due": "Jatuh tempo {date}",
+      "noDue": "Tanpa jatuh tempo",
+      "overdue": "Terlambat"
+    }
   },
   "checklist": {
     "title": "Checklist",
@@ -320,6 +331,118 @@
     "errors": {
       "invalidInput": "Periksa lagi nama acara, jam, dan durasi.",
       "forbidden": "Anda tidak punya izin untuk mengubah rundown.",
+      "generic": "Terjadi kesalahan. Coba lagi."
+    }
+  },
+  "budget": {
+    "title": "Anggaran",
+    "lead": "Estimasi per kategori dibanding yang sudah dibayar dan dijadwalkan.",
+    "noAccess": "Anda tidak punya akses ke anggaran wedding ini.",
+    "toPayments": "Jadwal pembayaran",
+    "toBudget": "Kembali ke anggaran",
+    "summary": {
+      "total": "Total anggaran",
+      "estimate": "Jumlah estimasi",
+      "committed": "Terikat",
+      "committedHint": "Sudah dibayar dan dijadwalkan",
+      "realized": "Sudah dibayar",
+      "remaining": "Sisa anggaran",
+      "unset": "belum diisi"
+    },
+    "alerts": {
+      "over": "Pembayaran melebihi total anggaran sebesar {amount}.",
+      "planOver": "Jumlah estimasi melebihi total anggaran sebesar {amount}.",
+      "categoryOver": "Melebihi estimasi sebesar {amount}",
+      "itemOver": "Melebihi estimasi sebesar {amount}"
+    },
+    "used": "{percent}% terpakai",
+    "usedUnknown": "Belum ada estimasi",
+    "row": {
+      "estimate": "Estimasi",
+      "realized": "Dibayar",
+      "committed": "Terikat"
+    },
+    "perPax": "{price} per orang × {pax} orang",
+    "emptyCategory": "Belum ada item di kategori ini.",
+    "empty": "Belum ada kategori.",
+    "category": {
+      "add": "Tambah kategori",
+      "name": "Nama kategori",
+      "addSubmit": "Tambah",
+      "rename": "Ubah nama",
+      "save": "Simpan",
+      "delete": "Hapus kategori",
+      "deleteConfirm": "Hapus kategori \"{name}\" beserta semua itemnya?"
+    },
+    "item": {
+      "add": "Tambah item",
+      "addSubmit": "Tambah",
+      "edit": "Ubah",
+      "save": "Simpan",
+      "delete": "Hapus",
+      "deleteConfirm": "Hapus item \"{name}\"?",
+      "name": "Nama item",
+      "category": "Kategori",
+      "pricingMode": "Cara hitung",
+      "fixed": "Nominal tetap",
+      "per_pax": "Per orang",
+      "estimatedAmount": "Estimasi (Rp)",
+      "unitPrice": "Harga per orang (Rp)",
+      "paxBasis": "Jumlah orang",
+      "guest_estimate": "Ikut perkiraan tamu ({count})",
+      "manual": "Isi sendiri",
+      "paxManual": "Jumlah orang",
+      "notes": "Catatan"
+    },
+    "errors": {
+      "invalidInput": "Periksa lagi isian Anda. Nominal ditulis tanpa koma, contoh 1.500.000.",
+      "forbidden": "Anda tidak punya izin untuk mengubah anggaran.",
+      "duplicate": "Nama kategori itu sudah ada.",
+      "hasPayments": "Tidak bisa dihapus karena sudah punya pembayaran. Hapus atau batalkan pembayarannya dulu.",
+      "generic": "Terjadi kesalahan. Coba lagi."
+    }
+  },
+  "payments": {
+    "title": "Jadwal pembayaran",
+    "lead": "DP, termin, dan pelunasan vendor.",
+    "empty": "Belum ada pembayaran.",
+    "noItems": "Buat item anggaran dulu sebelum menambah pembayaran.",
+    "sections": {
+      "scheduled": "Terjadwal",
+      "paid": "Sudah dibayar",
+      "cancelled": "Dibatalkan"
+    },
+    "kinds": {
+      "dp": "DP",
+      "termin": "Termin",
+      "pelunasan": "Pelunasan",
+      "lainnya": "Lainnya"
+    },
+    "due": "Jatuh tempo {date}",
+    "noDue": "Tanpa jatuh tempo",
+    "overdue": "Terlambat",
+    "paidOn": "Dibayar {date}",
+    "method": "Lewat {method}",
+    "fields": {
+      "item": "Untuk item",
+      "label": "Keterangan",
+      "kind": "Jenis",
+      "amount": "Nominal (Rp)",
+      "dueDate": "Jatuh tempo",
+      "method": "Cara bayar",
+      "notes": "Catatan",
+      "paidAt": "Tanggal bayar"
+    },
+    "add": "Tambah pembayaran",
+    "addSubmit": "Tambah",
+    "markPaid": "Tandai lunas",
+    "cancel": "Batalkan",
+    "reschedule": "Jadwalkan lagi",
+    "delete": "Hapus",
+    "deleteConfirm": "Hapus pembayaran \"{label}\"?",
+    "errors": {
+      "invalidInput": "Periksa lagi nominal dan tanggal.",
+      "forbidden": "Anda tidak punya izin untuk mengubah pembayaran.",
       "generic": "Terjadi kesalahan. Coba lagi."
     }
   }
