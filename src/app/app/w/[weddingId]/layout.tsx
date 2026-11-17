@@ -9,6 +9,7 @@ export default async function WeddingLayout({
   const base = `/app/w/${weddingId}`;
   const links = [
     { href: `${base}/dasbor`, label: t("dashboard") },
+    { href: `${base}/checklist`, label: t("checklist") },
     { href: `${base}/pengaturan/anggota`, label: t("members") },
     { href: "/app", label: t("weddings") },
   ];

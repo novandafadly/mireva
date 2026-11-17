@@ -1,6 +1,6 @@
 import "server-only";
 import { createClient } from "@/lib/supabase/server";
-import type { MemberRole } from "@/features/members/schema";
+import { permissionsSchema, type MemberRole, type Permissions } from "@/features/members/schema";
 
 export type WeddingSummary = {
   id: string;
@@ -42,6 +42,10 @@ export type WeddingContext = {
   /** Hanya untuk diteruskan ke `src/lib/entitlements.ts`. */
   entitlements: { limits: unknown };
   role: MemberRole;
+  /** Izin per modul milik pengguna. Diabaikan untuk owner. */
+  permissions: Permissions;
+  /** Baris `wedding_members` milik pengguna di wedding ini. */
+  memberId: string;
 };
 
 /** Wedding dan peran pengguna di dalamnya, atau null bila bukan anggota. */
@@ -52,7 +56,7 @@ export async function getWeddingContext(
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("wedding_members")
-    .select("role, weddings (id, display_name, status, limits)")
+    .select("id, role, permissions, weddings (id, display_name, status, limits)")
     .eq("wedding_id", weddingId)
     .eq("user_id", userId)
     .maybeSingle();
@@ -73,5 +77,7 @@ export async function getWeddingContext(
     status: rest.status,
     entitlements: { limits },
     role: data.role as MemberRole,
+    permissions: permissionsSchema.safeParse(data.permissions).data ?? {},
+    memberId: data.id as string,
   };
 }
