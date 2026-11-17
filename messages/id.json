@@ -1,6 +1,10 @@
 {
   "common": {
-    "loading": "Memuat…"
+    "loading": "Memuat…",
+    "back": "Kembali",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "genericError": "Terjadi kesalahan. Coba lagi."
   },
   "meta": {
     "description": "Rencanakan pernikahan dari lamaran sampai laporan akhir: checklist, anggaran, tamu, undangan, dan check-in hari H."
@@ -9,5 +13,149 @@
     "title": "{brand}",
     "lead": "Satu tempat untuk merencanakan pernikahan, dari lamaran sampai laporan akhir.",
     "status": "Sedang dibangun."
+  },
+  "auth": {
+    "signIn": {
+      "title": "Masuk",
+      "submit": "Masuk",
+      "noAccount": "Belum punya akun?",
+      "toSignUp": "Daftar",
+      "forgot": "Lupa sandi?"
+    },
+    "signUp": {
+      "title": "Daftar",
+      "submit": "Buat akun",
+      "hasAccount": "Sudah punya akun?",
+      "toSignIn": "Masuk",
+      "passwordHint": "Minimal 8 karakter."
+    },
+    "forgot": {
+      "title": "Lupa sandi",
+      "lead": "Masukkan email akun Anda. Kami kirim link untuk membuat sandi baru.",
+      "submit": "Kirim link",
+      "toSignIn": "Kembali ke halaman masuk"
+    },
+    "reset": {
+      "title": "Buat sandi baru",
+      "submit": "Simpan sandi"
+    },
+    "fields": {
+      "fullName": "Nama lengkap",
+      "email": "Email",
+      "password": "Sandi",
+      "newPassword": "Sandi baru"
+    },
+    "google": "Lanjut dengan Google",
+    "or": "atau",
+    "signOut": "Keluar",
+    "notices": {
+      "checkEmail": "Cek email Anda dan buka link konfirmasi untuk menyelesaikan pendaftaran.",
+      "resetSent": "Jika email itu terdaftar, link untuk membuat sandi baru sudah dikirim."
+    },
+    "errors": {
+      "invalidCredentials": "Email atau sandi salah.",
+      "emailTaken": "Email ini sudah terdaftar. Coba masuk.",
+      "weakPassword": "Sandi terlalu lemah. Pakai minimal 8 karakter.",
+      "emailNotConfirmed": "Email belum dikonfirmasi. Buka link di email pendaftaran Anda.",
+      "rateLimited": "Terlalu banyak percobaan. Tunggu sebentar lalu coba lagi.",
+      "invalidInput": "Periksa lagi isian Anda.",
+      "linkInvalid": "Link tidak berlaku atau sudah kedaluwarsa. Minta link baru.",
+      "generic": "Terjadi kesalahan. Coba lagi."
+    }
+  },
+  "weddings": {
+    "list": {
+      "title": "Wedding Anda",
+      "empty": "Belum ada wedding. Buat yang pertama, atau buka link undangan dari pasangan Anda.",
+      "create": "Buat wedding",
+      "roleOwner": "Owner",
+      "roleCollaborator": "Panitia",
+      "archived": "Diarsipkan",
+      "dateUnset": "Tanggal belum ditentukan"
+    },
+    "create": {
+      "title": "Buat wedding",
+      "lead": "Cukup nama dulu. Tanggal, kota, dan anggaran bisa diisi setelahnya.",
+      "partnerA": "Nama mempelai pertama",
+      "partnerB": "Nama mempelai kedua",
+      "submit": "Buat wedding",
+      "errors": {
+        "invalidInput": "Isi kedua nama mempelai.",
+        "generic": "Wedding belum bisa dibuat. Coba lagi."
+      }
+    }
+  },
+  "members": {
+    "title": "Anggota",
+    "lead": "Orang yang ikut mengelola wedding ini.",
+    "you": "Anda",
+    "roles": {
+      "owner": "Owner",
+      "collaborator": "Panitia"
+    },
+    "ownerAccess": "Akses penuh ke semua modul.",
+    "modules": {
+      "planning": "Checklist dan rundown",
+      "budget": "Anggaran",
+      "vendors": "Vendor",
+      "guests": "Tamu",
+      "invitation": "Undangan",
+      "event_day": "Hari H"
+    },
+    "levels": {
+      "none": "Tanpa akses",
+      "view": "Lihat",
+      "edit": "Edit"
+    },
+    "savePermissions": "Simpan izin",
+    "permissionsSaved": "Izin disimpan.",
+    "remove": "Keluarkan",
+    "removeConfirm": "Keluarkan {name} dari wedding ini?",
+    "invite": {
+      "title": "Undang anggota",
+      "email": "Email",
+      "role": "Peran",
+      "roleOwnerHint": "Pasangan Anda. Maksimal dua owner.",
+      "roleCollaboratorHint": "Keluarga atau panitia, dengan izin per modul.",
+      "permissions": "Izin per modul",
+      "submit": "Buat undangan",
+      "created": "Undangan dibuat. Link ini hanya ditampilkan sekali:",
+      "emailed": "Link juga sudah dikirim ke {email}.",
+      "notEmailed": "Email belum dikonfigurasi. Salin link ini dan kirim sendiri ke {email}.",
+      "expires": "Berlaku 7 hari. Penerima harus masuk dengan email tersebut."
+    },
+    "pending": {
+      "title": "Undangan menunggu",
+      "empty": "Tidak ada undangan yang menunggu.",
+      "expires": "Berlaku sampai {date}",
+      "expired": "Kedaluwarsa",
+      "revoke": "Cabut"
+    },
+    "errors": {
+      "invalidInput": "Periksa lagi email dan izin yang dipilih.",
+      "alreadyInvited": "Email ini sudah punya undangan aktif. Cabut dulu yang lama.",
+      "limitReached": "Jumlah panitia sudah mencapai batas paket.",
+      "maxOwners": "Wedding ini sudah punya dua owner.",
+      "lastOwner": "Owner terakhir tidak bisa dikeluarkan.",
+      "forbidden": "Anda tidak punya izin untuk tindakan ini.",
+      "generic": "Terjadi kesalahan. Coba lagi."
+    }
+  },
+  "join": {
+    "title": "Undangan bergabung",
+    "lead": "Anda diundang untuk ikut mengelola persiapan sebuah pernikahan.",
+    "signedInAs": "Anda masuk sebagai {email}.",
+    "submit": "Gabung",
+    "switchAccount": "Bukan akun yang benar? Keluar lalu masuk dengan email yang diundang.",
+    "errors": {
+      "invite_not_found": "Undangan tidak ditemukan, sudah dipakai, atau sudah dicabut.",
+      "invite_expired": "Undangan sudah kedaluwarsa. Minta undangan baru.",
+      "invite_email_mismatch": "Undangan ini untuk alamat email lain. Masuk dengan email yang diundang.",
+      "already_member": "Anda sudah menjadi anggota wedding ini.",
+      "wedding_archived": "Wedding ini sudah diarsipkan.",
+      "max_two_owners": "Wedding ini sudah punya dua owner.",
+      "limit_exceeded": "Jumlah panitia sudah mencapai batas paket. Hubungi pengundang.",
+      "generic": "Undangan belum bisa diterima. Coba lagi."
+    }
   }
 }

@@ -48,3 +48,28 @@ describe("katalog pesan", () => {
     expect(messages.home.title).toContain("{brand}");
   });
 });
+
+describe("aturan lint entitlement", () => {
+  const message = "src/lib/entitlements.ts";
+
+  async function lintEntitlement(code: string, filePath: string) {
+    const eslint = new ESLint();
+    const [result] = await eslint.lintText(code, { filePath });
+    return result!.messages.filter((item) => item.message.includes(message));
+  }
+
+  it("menolak membaca wedding.limits di luar entitlements.ts", async () => {
+    const code = `export const max = (wedding: { limits: Record<string, number> }) => wedding.limits["guests.max"];\n`;
+    expect(await lintEntitlement(code, "src/features/guests/contoh.ts")).toHaveLength(1);
+  });
+
+  it("menolak membaca wedding.plan di luar entitlements.ts", async () => {
+    const code = `export const paid = (wedding: { plan: string }) => wedding.plan === "paid";\n`;
+    expect(await lintEntitlement(code, "src/features/guests/contoh.ts")).toHaveLength(1);
+  });
+
+  it("mengizinkan di src/lib/entitlements.ts", async () => {
+    const code = `export const raw = (wedding: { limits: unknown }) => wedding.limits;\n`;
+    expect(await lintEntitlement(code, "src/lib/entitlements.ts")).toHaveLength(0);
+  });
+});

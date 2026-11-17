@@ -1,6 +1,6 @@
 # SPEC
 
-Status: **draf, menunggu persetujuan**. Modul 1.0 (fondasi) sudah ditulis dengan usulan di bagian 10 sebagai asumsi. Modul 1.1 dan seterusnya belum.
+Status: **disetujui** (16 November 2026) dengan usulan di bagian 10 sebagai keputusan. Fase 1 sedang dikerjakan: modul 1.0 dan 1.1 selesai.
 Sumber kebutuhan: [BRIEF.md](./BRIEF.md). Keputusan arsitektur: [DECISIONS.md](./DECISIONS.md).
 
 Nama produk belum final. Dokumen ini menyebutnya "produk". Di kode, nama, tagline, dan domain hanya ada di `src/config/brand.ts`.
