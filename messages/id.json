@@ -204,7 +204,9 @@
     "dashboard": "Dasbor",
     "members": "Anggota",
     "weddings": "Semua wedding",
-    "label": "Menu wedding"
+    "label": "Menu wedding",
+    "checklist": "Checklist",
+    "rundown": "Rundown"
   },
   "dashboard": {
     "title": "Dasbor",
@@ -236,5 +238,89 @@
       "due": "Tenggat {date}"
     },
     "archived": "Wedding ini diarsipkan dan hanya bisa dibaca."
+  },
+  "checklist": {
+    "title": "Checklist",
+    "lead": "Tugas per tahap, dari sekarang sampai hari H.",
+    "noAccess": "Anda tidak punya akses ke checklist wedding ini.",
+    "empty": "Belum ada tugas.",
+    "stages": {
+      "m12": "12 bulan sebelum acara",
+      "m9": "9 bulan sebelum acara",
+      "m6": "6 bulan sebelum acara",
+      "m3": "3 bulan sebelum acara",
+      "m1": "1 bulan sebelum acara",
+      "d7": "Seminggu sebelum acara",
+      "d1": "Sehari sebelum acara",
+      "d0": "Hari H"
+    },
+    "stageProgress": "{done} dari {total} selesai",
+    "statuses": {
+      "todo": "Belum",
+      "in_progress": "Dikerjakan",
+      "done": "Selesai",
+      "skipped": "Dilewati"
+    },
+    "status": "Status",
+    "saveStatus": "Simpan status",
+    "due": "Tenggat {date}",
+    "overdue": "Terlambat",
+    "assignee": "Penanggung jawab: {name}",
+    "mine": "Tugas Anda",
+    "draft": "Draf, belum direviu",
+    "draftNote": "Daftar berkas ini draf. Persyaratan bisa berbeda per daerah. Cek ke instansi terkait.",
+    "fields": {
+      "title": "Judul tugas",
+      "stage": "Tahap",
+      "dueDate": "Tenggat",
+      "assignee": "Penanggung jawab",
+      "unassigned": "Belum ada",
+      "description": "Keterangan",
+      "notes": "Catatan"
+    },
+    "add": "Tambah tugas",
+    "addSubmit": "Tambah",
+    "edit": "Ubah",
+    "save": "Simpan",
+    "delete": "Hapus",
+    "deleteConfirm": "Hapus tugas \"{title}\"?",
+    "errors": {
+      "invalidInput": "Periksa lagi judul, tahap, dan tenggat.",
+      "forbidden": "Anda tidak punya izin untuk mengubah tugas ini.",
+      "generic": "Terjadi kesalahan. Coba lagi."
+    }
+  },
+  "rundown": {
+    "title": "Rundown",
+    "lead": "Susunan acara hari H per sesi. Jam ditulis dalam {zone}.",
+    "noAccess": "Anda tidak punya akses ke rundown wedding ini.",
+    "noSession": "Tanpa sesi",
+    "emptySession": "Belum ada acara di sesi ini.",
+    "empty": "Belum ada acara.",
+    "noTime": "Jam belum diisi",
+    "duration": "{minutes} menit",
+    "pic": "PIC: {name}",
+    "location": "Lokasi: {place}",
+    "fields": {
+      "title": "Nama acara",
+      "session": "Sesi",
+      "noSession": "Tanpa sesi",
+      "startsAt": "Tanggal dan jam",
+      "durationMin": "Durasi (menit)",
+      "picText": "PIC",
+      "location": "Lokasi",
+      "notes": "Catatan"
+    },
+    "add": "Tambah acara",
+    "addSubmit": "Tambah",
+    "edit": "Ubah",
+    "save": "Simpan",
+    "delete": "Hapus",
+    "deleteConfirm": "Hapus acara \"{title}\"?",
+    "errors": {
+      "invalidInput": "Periksa lagi nama acara, jam, dan durasi.",
+      "forbidden": "Anda tidak punya izin untuk mengubah rundown.",
+      "generic": "Terjadi kesalahan. Coba lagi."
+    }
   }
 }
