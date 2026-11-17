@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
+  formatClock,
+  instantToLocalInput,
+  localInputToInstant,
   addDays,
   crewAccessExpiry,
   dateInZone,
@@ -107,5 +110,39 @@ describe("crewAccessExpiry", () => {
     expect(crewAccessExpiry("2026-05-10", "Asia/Makassar").toISOString()).toBe(
       "2026-05-11T16:00:00.000Z",
     );
+  });
+});
+
+describe("localInputToInstant dan instantToLocalInput", () => {
+  it("menafsirkan isian datetime-local di zona wedding", () => {
+    expect(localInputToInstant("2027-05-10T08:00", "Asia/Jakarta")).toBe(
+      "2027-05-10T01:00:00.000Z",
+    );
+    expect(localInputToInstant("2027-05-10T08:00", "Asia/Jayapura")).toBe(
+      "2027-05-09T23:00:00.000Z",
+    );
+  });
+
+  it("bolak-balik menghasilkan nilai yang sama", () => {
+    const instant = localInputToInstant("2027-12-31T23:45", "Asia/Makassar")!;
+    expect(instantToLocalInput(instant, "Asia/Makassar")).toBe("2027-12-31T23:45");
+  });
+
+  it("melewati batas hari saat dikonversi balik", () => {
+    expect(instantToLocalInput("2027-05-09T18:30:00Z", "Asia/Jakarta")).toBe("2027-05-10T01:30");
+  });
+
+  it("mengembalikan null untuk isian yang tidak sah", () => {
+    expect(localInputToInstant("", "Asia/Jakarta")).toBeNull();
+    expect(localInputToInstant("2027-02-30T08:00", "Asia/Jakarta")).toBeNull();
+    expect(localInputToInstant("2027-05-10T25:00", "Asia/Jakarta")).toBeNull();
+    expect(localInputToInstant("2027-05-10 08:00", "Asia/Jakarta")).toBeNull();
+  });
+});
+
+describe("formatClock", () => {
+  it("menampilkan jam di zona wedding dengan label zona", () => {
+    expect(formatClock("2027-05-10T01:00:00Z", "Asia/Jakarta")).toBe("08.00 WIB");
+    expect(formatClock("2027-05-10T01:05:00Z", "Asia/Makassar")).toBe("09.05 WITA");
   });
 });

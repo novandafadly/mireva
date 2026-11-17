@@ -77,3 +77,31 @@ export function daysUntil(date: string, now: Date, timezone: WeddingTimezone): n
 export function crewAccessExpiry(lastEventDate: string, timezone: WeddingTimezone): Date {
   return startOfDayInZone(addDays(lastEventDate, 2), timezone);
 }
+
+const LOCAL_INPUT = /^(\d{4}-\d{2}-\d{2})T(\d{2}):(\d{2})$/;
+
+/**
+ * Isian `<input type="datetime-local">` ("YYYY-MM-DDTHH:MM"), ditafsirkan di
+ * zona wedding, menjadi instant ISO. Null bila kosong atau tidak sah.
+ */
+export function localInputToInstant(value: string, timezone: WeddingTimezone): string | null {
+  const match = LOCAL_INPUT.exec(value);
+  if (!match || !isCalendarDate(match[1]!)) return null;
+  const hours = Number(match[2]);
+  const minutes = Number(match[3]);
+  if (hours > 23 || minutes > 59) return null;
+  const dayStart = startOfDayInZone(match[1]!, timezone).getTime();
+  return new Date(dayStart + hours * MS_PER_HOUR + minutes * 60_000).toISOString();
+}
+
+/** Kebalikan `localInputToInstant`: instant menjadi nilai untuk datetime-local. */
+export function instantToLocalInput(instant: string, timezone: WeddingTimezone): string {
+  const shifted = new Date(new Date(instant).getTime() + ZONES[timezone].offsetHours * MS_PER_HOUR);
+  return shifted.toISOString().slice(0, 16);
+}
+
+/** Jam di zona wedding dengan label zonanya, mis. "08.00 WIB". */
+export function formatClock(instant: string, timezone: WeddingTimezone): string {
+  const time = instantToLocalInput(instant, timezone).slice(11).replace(":", ".");
+  return `${time} ${ZONES[timezone].label}`;
+}
