@@ -34,7 +34,7 @@ export default async function WeddingsPage() {
           {weddings.map((wedding) => (
             <li key={wedding.id}>
               <Link
-                href={`/app/w/${wedding.id}/pengaturan/anggota`}
+                href={`/app/w/${wedding.id}/dasbor`}
                 className="flex flex-col gap-1 rounded-lg border p-4 hover:bg-muted"
               >
                 <span className="font-medium">{wedding.displayName}</span>

@@ -75,12 +75,54 @@
     },
     "create": {
       "title": "Buat wedding",
-      "lead": "Cukup nama dulu. Tanggal, kota, dan anggaran bisa diisi setelahnya.",
+      "lead": "Jawab beberapa pertanyaan. Kami susun checklist, rundown awal, dan alokasi anggaran. Semuanya bisa diubah nanti.",
+      "sections": {
+        "couple": "Mempelai",
+        "date": "Tanggal acara",
+        "place": "Tempat",
+        "ceremony": "Upacara dan adat",
+        "scale": "Tamu dan anggaran"
+      },
       "partnerA": "Nama mempelai pertama",
       "partnerB": "Nama mempelai kedua",
-      "submit": "Buat wedding",
+      "dateMode": {
+        "exact": "Sudah pasti",
+        "range": "Masih rentang",
+        "unknown": "Belum tahu"
+      },
+      "dateStart": "Tanggal acara",
+      "dateRangeStart": "Paling cepat",
+      "dateRangeEnd": "Paling lambat",
+      "dateRangeHint": "Tenggat checklist dihitung dari tanggal paling cepat dan ditandai perkiraan.",
+      "dateUnknownHint": "Checklist dibuat tanpa tenggat. Tenggat muncul setelah tanggal diisi.",
+      "city": "Kota",
+      "timezone": "Zona waktu",
+      "ceremony": "Jenis upacara",
+      "ceremonyHint": "Opsional. Hanya untuk memilih template checklist dan berkas. Tidak ditampilkan ke tamu.",
+      "ceremonyOptions": {
+        "none": "Belum ditentukan",
+        "akad": "Akad nikah",
+        "pemberkatan": "Pemberkatan",
+        "lainnya": "Lainnya"
+      },
+      "customs": "Adat",
+      "customsHint": "Pilih paling banyak dua. Template per adat sedang disiapkan; pilihan Anda disimpan.",
+      "customOptions": {
+        "nasional": "Nasional",
+        "jawa": "Jawa",
+        "sunda": "Sunda",
+        "minang": "Minang",
+        "batak": "Batak",
+        "bugis": "Bugis",
+        "betawi": "Betawi",
+        "bali": "Bali"
+      },
+      "guestEstimate": "Perkiraan jumlah tamu",
+      "totalBudget": "Total anggaran (Rp)",
+      "totalBudgetHint": "Contoh: 150.000.000. Boleh dikosongkan.",
+      "submit": "Buat wedding dan susun rencana",
       "errors": {
-        "invalidInput": "Isi kedua nama mempelai.",
+        "invalidInput": "Periksa lagi isian Anda: nama mempelai, tanggal, adat (maksimal dua), jumlah tamu, dan anggaran.",
         "generic": "Wedding belum bisa dibuat. Coba lagi."
       }
     }
@@ -157,5 +199,42 @@
       "limit_exceeded": "Jumlah panitia sudah mencapai batas paket. Hubungi pengundang.",
       "generic": "Undangan belum bisa diterima. Coba lagi."
     }
+  },
+  "nav": {
+    "dashboard": "Dasbor",
+    "members": "Anggota",
+    "weddings": "Semua wedding",
+    "label": "Menu wedding"
+  },
+  "dashboard": {
+    "title": "Dasbor",
+    "countdown": {
+      "label": "Hitung mundur",
+      "days": "{days, plural, =0 {Hari ini} other {# hari lagi}}",
+      "past": "Acara sudah lewat",
+      "unset": "Tanggal belum ditentukan",
+      "estimate": "Perkiraan, dari awal rentang tanggal",
+      "date": "{date}"
+    },
+    "checklist": {
+      "label": "Progres checklist",
+      "value": "{done} dari {total} tugas selesai",
+      "empty": "Belum ada tugas."
+    },
+    "budget": {
+      "label": "Anggaran",
+      "total": "Total anggaran",
+      "allocated": "Sudah dialokasikan",
+      "remaining": "Belum dialokasikan",
+      "over": "Alokasi melebihi total anggaran sebesar {amount}",
+      "unset": "Total anggaran belum diisi."
+    },
+    "focus": {
+      "label": "Fokus minggu ini",
+      "empty": "Tidak ada tugas yang jatuh tempo dalam 7 hari.",
+      "overdue": "Terlambat",
+      "due": "Tenggat {date}"
+    },
+    "archived": "Wedding ini diarsipkan dan hanya bisa dibaca."
   }
 }
